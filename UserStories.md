@@ -29,5 +29,5 @@
 ## User 5
 
 - As a user of the website, I want an easy way to pick my workouts, so that I can spend less time planning
-      - Feature: drop down menue to choose workouts
+      - Feature: drop down menu to choose workouts
       - Small
