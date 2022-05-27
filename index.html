@@ -1,9 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Document</title>
+  <title>Project Steel</title>
+  <link rel="stylesheet" href="css/home.css">
 </head>
+
 <body>
-  
+  <header>
+    <h1>Project Steel</h1>
+    <nav>
+      <ul>
+        <a href="index.html">Home</a>
+        <a href="graph.html">Performance Chart</a>
+        <a href="about-us.html">About Us</a>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <p>Instructions</p>
+    <div>
+      <form action="">
+        <fieldset>
+          <legend>Input your info!</legend>
+
+          <label for="userName">Name:</label>
+          <input id="userName" type="text" name="userName">
+
+          <label for="userWeight">Weight:</label>
+          <input id="userWeight" type="number" name="userWeight">
+
+          <label for="userHeight">Height:</label>
+          <input id="userHeight" type="number" name="userHeight">
+
+          <label for="Activities">Choose a workout:</label>
+          <select name="Activities" id="workouts">
+            <option value="push up">Push Up</option>
+            <option value="sit-up">Sit Up</option>
+            <option value="jumping jack">Jumping Jacks</option>
+            <option value="squat">Squat</option>
+          </select>
+
+        </fieldset>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <script src="js/home.js" type="text/javascript"></script>
+  </main>
+  <footer>
+    <p>Project Steel@Project Steel</p>
+  </footer>
 </body>
+
 </html>
