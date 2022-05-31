@@ -152,7 +152,6 @@ function renderChart() {
 }
 //***********Event Handlers***********
 function handleClick(event) {
-  busmallCount--;
   let imgClicked = event.target.alt;
 
   for (let i = 0; i < busmallItems.length; i++) {
