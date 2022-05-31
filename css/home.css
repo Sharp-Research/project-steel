@@ -1,0 +1,15 @@
+h1{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 60pt;
+  -webkit-text-stroke: 1px;
+  color: white;
+  -webkit-text-stroke-color: black;
+}
+
+body{
+  background-image: url('../img/Body-Background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 100%;
+  background-size: 100% 100%;
+}
