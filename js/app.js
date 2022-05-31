@@ -9,31 +9,27 @@ let userData = [];
 //***********DOM references***********
 let customerData = document.getElementById('myForm');
 let workoutData = document.getElementById('workouts');
-// let imgOne = document.getElementById('img-one');
-// let imgTwo = document.getElementById('img-two');
-// let imgThree = document.getElementById('img-three');
-// let shwoResultsBtn = document.getElementById('show-result-btn');
-// let resultsList = document.getElementById('results-list');
 
 // ********** CANVAS REFERENCE ***************
 // let ctx = document.getElementById('my-chart').getContext('2d');
 
 //***********Constructor***********
 let workoutType = [];
-function User(name, weight, workout) {
+function User(name, weight, workout, time) {
   this.name = name;
   this.weight = weight;
-  this.workoutType = type;
-  this.avgCal = avgCal;
+  // this.workoutType = type;
   this.workout = workout;
-  userData.push(this);
-  type.push(this);
+  this.time = time;
+  workoutType.push(this);
 }
 
 User.prototype.getUserCal = function () {
-  let userCal = (weight / 2.2) * aveCal * 0.075 * this.time;
-  return;
+  let userCal = (this.weight / 2.2) * aveCal * 0.075 * this.time;
+  console.log(userCal) 
+  return userCal;
 }
+
 // ***function Workout()
 
 //*************local storage part 2 */
@@ -152,46 +148,23 @@ function renderChart() {
 }
 //***********Event Handlers***********
 function handleClick(event) {
-  let imgClicked = event.target.alt;
+  // let submitClicked = event.target.alt;
+  event.preventDefault();
+  let name = event.target.userName.value;
+  let weight = +event.target.userWeight.value;
+  let time = +event.target.time.value
+  let newUser = new User(name, weight, 'push up');
+  console.log(newUser)
 
-  for (let i = 0; i < busmallItems.length; i++) {
-    if (imgClicked === busmallItems[i].name) {
-      busmallItems[i].votes++;
-    }
-  }
 
-  renderImgs();
-
-  if (busmallCount === 0) {
-    imgContainer.removeEventListener('click', handleClick);
-    // renderChart();
-  }
-
-  // ******** LOCAL STORAGE PART 1 ************
-
-  //   // STEP 1: STRINGIFY DATA
-  //   let stringifieItems = JSON.stringify(busmallItems);
-
-  //   console.log(stringifieItems);
-
-  //   // STEP 2: ADD TO LOCAL STORAGE
-  //   localStorage.setItem('busmallItems', stringifieItems);
-
-  // }
+}
 
   function handleShowResult() {
     let chart = document.getElementById('chart-container');
     chart.hidden = false;
     if (busmallCount === 0) {
       renderChart();
-      //     for (let i = 0; i < busmallItems.length; i++) {
-      //       let liElement = document.createElement('li');
-      //       liElement.textContent = `${busmallItems[i].name} showed ${busmallItems[i].views} times and voted for ${busmallItems[i].votes}
-      // times.`;
-      //       resultsList.appendChild(liElement);
-      //     }
-    }
-  }
+
   //***********Event listeners***********
-  workOutContainer.addEventListener('click', handleClick);
-  // shwoResultsBtn.addEventListener('click', handleShowResult);
+  document.getElementById('myForm').addEventListener('submit', handleClick);
+ 
