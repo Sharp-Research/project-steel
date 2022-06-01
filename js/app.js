@@ -4,12 +4,12 @@ console.log('hello project steel!');
 
 //***********Global variables***********
 // let busmallCount = 25;
-let userData = [];
+// let userData = [];
 
 //***********DOM references***********
 let customerData = document.getElementById('myForm');
 let workoutData = document.getElementById('workouts');
-
+let shwoResultsBtn = document.getElementById('show-result-btn');
 
 // ********** CANVAS REFERENCE ***************
 let customerChart = document.getElementById('my-chart');
@@ -31,10 +31,22 @@ User.prototype.getUserCal = function () {
   let userCal = (this.weight / 2.2) * this.aveCal * 0.075 * this.time;
   console.log(userCal);
   this.userCal += userCal;
-  return userCal;
-};
+  // return userCal;
+}
+User.prototype.aveCalories = function () {
+  if (this.workout === 'Push Up') {
+    this.aveCal = 9;
+  } else if (this.workout === 'Sit-Up') {
+    this.aveCal = 8;
+  } else if (this.workout === 'Jumping Jack') {
+    this.aveCal = 7;
+  } else if (this.workout === 'Squat') {
+    this.aveCal = 5;
+  }
+  return this.aveCal;
+}
 
-// ***function Workout()
+
 
 //*************local storage part 2 */
 
@@ -57,25 +69,12 @@ User.prototype.getUserCal = function () {
 
 //***********Helper functions/Executable code***********
 
-User.prototype.aveCalories = function () {
-  if (this.workout === 'Push Up') {
-    this.aveCal += 9;
-  }else if (this.workout === 'Sit-Up') {
-    this.aveCal += 8;
-  } else if (this.workout === 'Jumping Jack') {
-    this.aveCal += 7;
-  } else if (this.workout === 'Squat') {
-    this.aveCal += 5;
-  }
-  return this.aveCal;
-};
 
 
 //********Chart render function***********
 function renderChart() {
   let userName = [];
   let userCalories = [];
-
   for (let i = 0; i < workoutType.length; i++) {
     userName.push(workoutType[i].name);
     userCalories.push(workoutType[i].userCal);
@@ -83,7 +82,7 @@ function renderChart() {
   let myChartObj = {
     type: 'bar',
     data: {
-      labels: userCalories,
+      labels: userName,
       datasets: [{
         label: '# of Calories',
         data: userCalories,
@@ -108,7 +107,7 @@ function renderChart() {
           '#ff0000'
         ],
         borderWidth: 1
-      },
+      }
       ]
     },
     options: {
@@ -121,11 +120,12 @@ function renderChart() {
   };
   new Chart(customerChart, myChartObj);
 }
+// renderChart();
 
 //***********Event Handlers***********
 function handleClick(event) {
-  // let submitClicked = event.target.alt;
   event.preventDefault();
+
   let name = event.target.userName.value;
   let weight = +event.target.userWeight.value;
   let workout = event.target.activities.value;
@@ -134,9 +134,13 @@ function handleClick(event) {
   newUser.aveCalories();
   newUser.getUserCal();
   console.log(newUser);
+  workoutType.push(newUser);
 }
 
-
-renderChart();
+function handleShowResult() {
+  let chart = document.getElementById('chart-container');
+  chart.hidden = false;
+  renderChart();}
 //***********Event listeners***********
 customerData.addEventListener('submit', handleClick);
+shwoResultsBtn.addEventListener('click', handleShowResult);
