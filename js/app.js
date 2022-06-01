@@ -15,17 +15,18 @@ let shwoResultsBtn = document.getElementById('show-result-btn');
 let customerChart = document.getElementById('my-chart');
 
 //***********Constructor***********
-let workoutType = [];
 function User(name, weight, workout, time) {
   this.name = name;
   this.weight = weight;
-  // this.workoutType = type;
+  // this.User.workoutTypeworkoutType = type;
   this.workout = workout;
   this.aveCal = 0;
   this.userCal = 0;
   this.time = time;
-  workoutType.push(this);
+  User.workoutType.push(this);
+  
 }
+User.workoutType = [];
 
 User.prototype.getUserCal = function () {
   let userCal = (this.weight / 2.2) * this.aveCal * 0.075 * this.time;
@@ -75,9 +76,9 @@ User.prototype.aveCalories = function () {
 function renderChart() {
   let userName = [];
   let userCalories = [];
-  for (let i = 0; i < workoutType.length; i++) {
-    userName.push(workoutType[i].name);
-    userCalories.push(workoutType[i].userCal);
+  for (let i = 0; i < User.workoutType.length; i++) {
+    userName.push(User.workoutType[i].name);
+    userCalories.push(User.workoutType[i].userCal);
   }
   let myChartObj = {
     type: 'bar',
@@ -134,7 +135,7 @@ function handleClick(event) {
   newUser.aveCalories();
   newUser.getUserCal();
   console.log(newUser);
-  workoutType.push(newUser);
+  // User.workoutType.push(newUser);
 }
 
 function handleShowResult() {
