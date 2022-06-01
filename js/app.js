@@ -29,7 +29,7 @@ User.workoutType = [];
 User.prototype.getUserCal = function () {
   let userCal = (this.weight / 2.2) * this.aveCal * 0.075 * this.time;
   console.log(userCal);
-  this.userCal += userCal;
+  this.userCal += Math.floor(userCal);
   // return userCal;
 };
 User.prototype.aveCalories = function () {
@@ -41,6 +41,10 @@ User.prototype.aveCalories = function () {
     this.aveCal = 7;
   } else if (this.workout === 'Squat') {
     this.aveCal = 5;
+  } else if (this.workout === 'Burpee') {
+    this.aveCal = 10;
+  } else if (this.workout === 'Running') {
+    this.aveCal = 20;
   }
   return this.aveCal;
 };
