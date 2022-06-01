@@ -10,8 +10,8 @@
 </head>
 
 <body>
+
   <div class="Body-content">
-    <form action="">
       <header>
         <h1>Project Steel</h1>
         <nav>
@@ -25,6 +25,8 @@
       <main>
         <p>Instructions</p>
         <!-- <section id="Form-align"> -->
+    <div>
+      <form id="myForm" action="">
         <fieldset>
           <legend>Input your info!</legend>
 
@@ -34,27 +36,35 @@
           <label for="userWeight">Weight:</label>
           <input id="userWeight" type="number" name="userWeight">
 
-          <label for="userHeight">Height:</label>
-          <input id="userHeight" type="number" name="userHeight">
+          <label for="time">Time:</label>
+          <input id="time" type="number" name="time">
 
-          <label for="Activities">Choose a workout:</label>
-          <select name="Activities" id="workouts">
-            <option value="push up">Push Up</option>
-            <option value="sit-up">Sit Up</option>
-            <option value="jumping jack">Jumping Jacks</option>
-            <option value="squat">Squat</option>
+          <label for="activities">Choose a workout:</label>
+          <select name="activities" id="workouts">
+
+            <option value="Push Up">Push Up</option>
+            <option value="Sit-Up">Sit Up</option>
+            <option value="Jumping Jack">Jumping Jacks</option>
+            <option value="Squat">Squat</option>
           </select>
-
         </fieldset>
-        <button type="submit">Submit</button>
-    </form>
-  </div>
-
+        <button id="button" type="submit">Submit</button>
+      </form>
+    </div>
+      <section>
+        <h2>Fitness Data</h2>
+        <div id="chart-container" hidden>
+          <canvas id="my-chart" style="position: relative; height:60vh; width:70vw"></canvas>
+        </div>
+      </section>
+    </div>
+    <div id="show-result-btn">View Result</div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="js/app.js" type="text/javascript"></script>
   </main>
   <footer>
     <p>Project Steel@Project Steel</p>
   </footer>
-  <script src="js/home.js" type="text/javascript"></script>
 </body>
 
 </html>
