@@ -30,7 +30,7 @@ function User(name, weight, workout, time) {
 User.prototype.getUserCal = function () {
   let userCal = (this.weight / 2.2) * this.aveCal * 0.075 * this.time;
   console.log(userCal);
-  this.userCal++;
+  this.userCal += userCal;
   return userCal;
 };
 
@@ -60,11 +60,11 @@ User.prototype.getUserCal = function () {
 User.prototype.aveCalories = function () {
   if (this.workout === 'Push Up') {
     this.aveCal += 9;
-  }else if (workoutType === 'Sit Up') {
+  }else if (this.workout === 'Sit-Up') {
     this.aveCal += 8;
-  } else if (workoutType === 'Jumping Jacks') {
+  } else if (this.workout === 'Jumping Jack') {
     this.aveCal += 7;
-  } else if (workoutType === 'Squat') {
+  } else if (this.workout === 'Squat') {
     this.aveCal += 5;
   }
   return this.aveCal;
@@ -112,8 +112,6 @@ function renderChart() {
       ]
     },
     options: {
-      responsive: true,
-      maintainAspectRatio: false,
       scales: {
         y: {
           beginAtZero: true
@@ -124,7 +122,6 @@ function renderChart() {
   new Chart(customerChart, myChartObj);
 }
 
-renderChart();
 //***********Event Handlers***********
 function handleClick(event) {
   // let submitClicked = event.target.alt;
@@ -140,5 +137,6 @@ function handleClick(event) {
 }
 
 
+renderChart();
 //***********Event listeners***********
 customerData.addEventListener('submit', handleClick);
