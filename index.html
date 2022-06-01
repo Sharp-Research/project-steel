@@ -3,22 +3,28 @@
 
 <head>
   <title>Project Steel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="css/home.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header>
-    <h1>Project Steel</h1>
-    <nav>
-      <ul>
-        <a href="index.html">Home</a>
-        <a href="graph.html">Performance Chart</a>
-        <a href="about-us.html">About Us</a>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <p>Instructions</p>
+
+  <div class="Body-content">
+      <header>
+        <h1>Project Steel</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="graph.html">Performance Chart</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <p>Instructions</p>
+        <!-- <section id="Form-align"> -->
     <div>
       <form id="myForm" action="">
         <fieldset>
@@ -41,10 +47,10 @@
             <option value="Jumping Jack">Jumping Jacks</option>
             <option value="Squat">Squat</option>
           </select>
-
         </fieldset>
         <button id="button" type="submit">Submit</button>
       </form>
+    </div>
       <section>
         <h2>Fitness Data</h2>
         <div id="chart-container" hidden>
