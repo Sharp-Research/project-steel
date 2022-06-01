@@ -1,0 +1,50 @@
+h1 {
+  font-family: 'Bebas Neue', 'Times New Roman', Times, serif;
+  font-size: 60pt;
+  -webkit-text-stroke: 1px;
+  color: white;
+  -webkit-text-stroke-color: black;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  font-size: 20pt;
+}
+
+ul{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+a:link {
+  -webkit-text-stroke: 1px;
+  color: white;
+  -webkit-text-stroke-color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: transparent;
+}
+
+a:visited {
+  -webkit-text-stroke: 1px;
+  color: white;
+  -webkit-text-stroke-color: black;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Bebas Neue', 'Times New Roman', Times, serif;
+  font-size: 15pt;
+  background-image: url('../img/Body-Background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 100%;
+  background-size: 100% 100%;
+  align-self: center;
+  align-content: center;
+  flex-direction: row;
+}
