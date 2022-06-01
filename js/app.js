@@ -41,6 +41,8 @@ User.prototype.aveCalories = function () {
     this.aveCal = 7;
   } else if (this.workout === 'Squat') {
     this.aveCal = 5;
+  } else if (this.workout === 'Running') {
+    this.aveCal = 20;
   }
   return this.aveCal;
 };

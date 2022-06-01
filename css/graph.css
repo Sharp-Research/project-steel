@@ -48,3 +48,17 @@ body {
   align-content: center;
   flex-direction: row;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+main section {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+}

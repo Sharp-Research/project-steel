@@ -42,13 +42,23 @@ body {
   flex-direction: row;
 }
 
-main {
+/* main {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: minmax(150px, auto);
-}
+} */
 
+main div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
 header {
   display: grid;
   grid-row: 1/1;
@@ -83,7 +93,7 @@ header {
   align-content: center;
   align-self: center;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   /* border: 3px blue; */
   /* display: flex;
   width: 50%;
