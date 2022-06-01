@@ -43,10 +43,10 @@ form {
 }
 
 form legend {
-  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-family: 'Bebas Neue', cursive;
   color: #d9d9d9;
   border: 2px solid #353535; 
-  font-size: 20pt;
+  font-size: 25pt;
   background-color: #284B63;
   text-align: center;
   width: 50%;
@@ -102,7 +102,7 @@ button {
 
 button[type="submit"] {
   background-color: #284B63;
-  color: hsl(88, 71%, 86%);
+  color: whitesmoke;
 }
 
 button[type="submit"]:hover {
@@ -112,10 +112,13 @@ button[type="submit"]:hover {
 nav ul {
   width: 100%;
   display: flex;justify-content: space-evenly;
+  font-size: 20pt;
   
 }
 a:link {
-  color: whitesmoke;
+  -webkit-text-stroke: 1px;
+  color: white;
+  -webkit-text-stroke-color: black;
   text-decoration: none;
 }
 
@@ -124,5 +127,8 @@ a:hover {
 }
 
 a:visited{
-  color: green;
+  -webkit-text-stroke: 1px;
+  color: white;
+  -webkit-text-stroke-color: black;
+  text-decoration: none;
 }
