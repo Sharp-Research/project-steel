@@ -24,7 +24,7 @@ function User(name, weight, workout, time) {
   this.userCal = 0;
   this.time = time;
   User.workoutType.push(this);
-  
+  // updateStorage();
 }
 User.workoutType = [];
 
@@ -32,6 +32,7 @@ User.prototype.getUserCal = function () {
   let userCal = (this.weight / 2.2) * this.aveCal * 0.075 * this.time;
   console.log(userCal);
   this.userCal += userCal;
+  updateStorage();
   // return userCal;
 }
 User.prototype.aveCalories = function () {
@@ -69,8 +70,6 @@ User.prototype.aveCalories = function () {
 //   new Busmall('banana');
 
 //***********Helper functions/Executable code***********
-
-
 
 //********Chart render function***********
 function renderChart() {
@@ -123,6 +122,16 @@ function renderChart() {
 }
 // renderChart();
 
+function updateStorage(){
+  const arrayString = JSON.stringify(User.workoutType);
+  console.log(arrayString);
+  localStorage.setItem('user', arrayString);
+
+const userData = localStorage.getItem('user');
+// convert the data (array) from a string to something that we can use in JavaScript.
+const userInfo =  JSON.parse(data);
+renderChart();
+}
 //***********Event Handlers***********
 function handleClick(event) {
   event.preventDefault();
