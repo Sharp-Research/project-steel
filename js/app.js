@@ -29,7 +29,7 @@ User.workoutType = [];
 User.prototype.getUserCal = function () {
   let userCal = (this.weight / 2.2) * this.aveCal * 0.075 * this.time;
   console.log(userCal);
-  this.userCal += userCal;
+  this.userCal += Math.floor(userCal);
   // return userCal;
 };
 User.prototype.aveCalories = function () {
