@@ -1,6 +1,8 @@
 'use strict';
 
 let customerChart = document.getElementById('my-chart');
+let getCalorieTotal = document.getElementById('totalCals');
+let totalCalories = 0;
 
 function renderChart() {
   let userName = [];
@@ -14,9 +16,12 @@ function renderChart() {
 
 
   for (let i = 0; i < parsedUsers.length; i++) {
-    userName.push(parsedUsers[i].name);
+    userName.push(parsedUsers[i].workout);
     userCalories.push(parsedUsers[i].userCal);
+    totalCalories += Math.floor(parsedUsers[i].userCal);
+    console.log(totalCalories);
   }
+  Math.floor(getCalorieTotal.append(totalCalories));
   let myChartObj = {
     type: 'bar',
     data: {
