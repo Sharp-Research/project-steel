@@ -10,42 +10,45 @@
 </head>
 
 <body>
-  <header>
-    <h1>Project Steel</h1>
-    <nav>
-      <ul>
-        <a href="index.html">Home</a>
-        <a href="graph.html">Performance Chart</a>
-        <a href="about-us.html">About Us</a>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <p>Instructions</p>
+  <div class="Body-content">
     <form action="">
-      <fieldset>
-        <legend>Input your info!</legend>
+      <header>
+        <h1>Project Steel</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="graph.html">Performance Chart</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <p>Instructions</p>
+        <!-- <section id="Form-align"> -->
+        <fieldset>
+          <legend>Input your info!</legend>
 
-        <label for="userName">Name:</label>
-        <input id="userName" type="text" name="userName">
+          <label for="userName">Name:</label>
+          <input id="userName" type="text" name="userName">
 
-        <label for="userWeight">Weight:</label>
-        <input id="userWeight" type="number" name="userWeight">
+          <label for="userWeight">Weight:</label>
+          <input id="userWeight" type="number" name="userWeight">
 
-        <label for="userHeight">Height:</label>
-        <input id="userHeight" type="number" name="userHeight">
+          <label for="userHeight">Height:</label>
+          <input id="userHeight" type="number" name="userHeight">
 
-        <label for="Activities">Choose a workout:</label>
-        <select name="Activities" id="workouts">
-          <option value="push up">Push Up</option>
-          <option value="sit-up">Sit Up</option>
-          <option value="jumping jack">Jumping Jacks</option>
-          <option value="squat">Squat</option>
-        </select>
+          <label for="Activities">Choose a workout:</label>
+          <select name="Activities" id="workouts">
+            <option value="push up">Push Up</option>
+            <option value="sit-up">Sit Up</option>
+            <option value="jumping jack">Jumping Jacks</option>
+            <option value="squat">Squat</option>
+          </select>
 
-      </fieldset>
-      <button type="submit">Submit</button>
+        </fieldset>
+        <button type="submit">Submit</button>
     </form>
+  </div>
 
   </main>
   <footer>
