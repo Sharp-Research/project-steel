@@ -1,20 +1,25 @@
 'use strict';
 
+//***********DOM references***********
 let customerChart = document.getElementById('my-chart');
 let getCalorieTotal = document.getElementById('totalCals');
+let getWeightLoss = document.getElementById('weightLoss');
 let totalCalories = 0;
+let totalWeightLoss = 0;
 
+
+// This function is from Chart.js which we are using to take the data from local storage and produce a bar chart to the "Performance Chart" page or graph.html
 function renderChart() {
   let userName = [];
   let userCalories = [];
-  // Step 3 ********** Get out of local storage **********/
+  // Step 3 of local storage ********** Get out of local storage **********/
   let retrievedUsers = localStorage.getItem('userInfo');
 
-  // Step 4 ********** Parse Data for code **********/
+  // Step 4 of local storage ********** Parse Data for code **********/
   let parsedUsers = JSON.parse(retrievedUsers);
   console.log(parsedUsers);
 
-
+  // This for loop goes through the data from local storage "parsedUsers" and pushes it to empty arrays to produce the data for the chart axis. In addition it calculates the total calories.
   for (let i = 0; i < parsedUsers.length; i++) {
     userName.push(parsedUsers[i].workout);
     userCalories.push(parsedUsers[i].userCal);
@@ -22,6 +27,8 @@ function renderChart() {
     console.log(totalCalories);
   }
   Math.floor(getCalorieTotal.append(totalCalories));
+  totalWeightLoss += (totalCalories/3500);
+  getWeightLoss.append(totalWeightLoss.toFixed(2));
   let myChartObj = {
     type: 'bar',
     data: {
@@ -66,4 +73,5 @@ function renderChart() {
   new Chart(customerChart, myChartObj);
 }
 
+// Calling the renderChart function
 renderChart();

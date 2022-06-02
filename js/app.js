@@ -1,23 +1,13 @@
 'use strict';
 
-console.log('hello project steel!');
-
-//***********Global variables***********
-// let userData = [];
-
 //***********DOM references***********
 let customerData = document.getElementById('myForm');
-let workoutData = document.getElementById('workouts');
 let shwoResultsBtn = document.getElementById('show-result-btn');
-
-// ********** CANVAS REFERENCE ***************
-// let customerChart = document.getElementById('my-chart');
 
 //***********Constructor***********
 function User(name, weight, workout, time) {
   this.name = name;
   this.weight = weight;
-  // this.User.workoutTypeworkoutType = type;
   this.workout = workout;
   this.aveCal = 0;
   this.userCal = 0;
@@ -26,12 +16,15 @@ function User(name, weight, workout, time) {
 }
 User.workoutType = [];
 
+// Function that calculates the calories burned per exercise
+// Forumla used from https://burned-calories.com
 User.prototype.getUserCal = function () {
   let userCal = (this.weight / 2.2) * this.aveCal * 0.075 * this.time;
   console.log(userCal);
   this.userCal += Math.floor(userCal);
-  // return userCal;
 };
+
+// This function determines the MET (Metabolic Equivalent of Task) represented by this.aveCal which is a variable in the equation in User.prototype.getUserCal
 User.prototype.aveCalories = function () {
   if (this.workout === 'Push Up') {
     this.aveCal = 9;
@@ -42,88 +35,12 @@ User.prototype.aveCalories = function () {
   } else if (this.workout === 'Squat') {
     this.aveCal = 5;
   } else if (this.workout === 'Burpee') {
-    this.aveCal = 10;
+    this.aveCal = 8;
   } else if (this.workout === 'Running') {
-    this.aveCal = 20;
+    this.aveCal = 11;
   }
   return this.aveCal;
 };
-
-
-
-//*************local storage part 2 */
-
-//step 3: geit it out of the local storage
-
-// let retrivedItems = localStorage.getItem('busmallItems');
-
-// Parse data for reuse
-
-// let parsedItems = JSON.parse(retrivedItems);
-// console.log('Parsed >>>>', parsedItems);
-
-// if (retrivedItems) {
-//   busmallItems = parsedItems;
-// }
-// else {
-//   new Busmall('sweep', 'png');
-//   new Busmall('bag');
-//   new Busmall('banana');
-
-//***********Helper functions/Executable code***********
-
-
-
-//********Chart render function***********
-// function renderChart() {
-//   let userName = [];
-//   let userCalories = [];
-//   for (let i = 0; i < User.workoutType.length; i++) {
-//     userName.push(User.workoutType[i].name);
-//     userCalories.push(User.workoutType[i].userCal);
-//   }
-//   let myChartObj = {
-//     type: 'bar',
-//     data: {
-//       labels: userName,
-//       datasets: [{
-//         label: '# of Calories',
-//         data: userCalories,
-//         backgroundColor: [
-//           '#ff7300',
-//           '#fffb00',
-//           '#48ff00',
-//           '#00ffd5',
-//           '#002bff',
-//           '#7a00ff',
-//           '#ff00c8',
-//           '#ff0000'
-//         ],
-//         borderColor: [
-//           '#ff7300',
-//           '#fffb00',
-//           '#48ff00',
-//           '#00ffd5',
-//           '#002bff',
-//           '#7a00ff',
-//           '#ff00c8',
-//           '#ff0000'
-//         ],
-//         borderWidth: 1
-//       }
-//       ]
-//     },
-//     options: {
-//       scales: {
-//         y: {
-//           beginAtZero: true
-//         }
-//       }
-//     }
-//   };
-//   new Chart(customerChart, myChartObj);
-// }
-// renderChart();
 
 //***********Event Handlers***********
 function handleClick(event) {
@@ -136,25 +53,21 @@ function handleClick(event) {
   let newUser = new User(name, weight, workout, time);
   newUser.aveCalories();
   newUser.getUserCal();
-  // Step 1: 
+
+  // Step 1 of data storage: Stringify data from User.workoutType array
   let stringifiedUsers = JSON.stringify(User.workoutType);
 
-  // Step 2:
+  // Step 2: store data to local system
   localStorage.setItem('userInfo', stringifiedUsers);
   console.log(stringifiedUsers);
   console.log(newUser);
-  // User.workoutType.push(newUser);
 }
 
-
-
+// Redirect the user to graph.html upon clicking "view performance chart"
 function handleShowResult() {
-  // let chart = document.getElementById('chart-container');
-  // chart.hidden = false;
-  // renderChart();
   window.location.assign('graph.html');
-
 }
+
 //***********Event listeners***********
 customerData.addEventListener('submit', handleClick);
 shwoResultsBtn.addEventListener('click', handleShowResult);
