@@ -47,7 +47,7 @@ function renderChart() {
           '#312244'
         ],
         borderColor: [
-          '#dee2e6',
+          '',
           '#dee2e6',
           '#dee2e6',
           '#dee2e6',
@@ -61,11 +61,20 @@ function renderChart() {
       ]
     },
     options: {
+      scaleFontColor: '#dee2e6',
       responsive: true,
       maintainAspectRatio: false,
       scales: {
         y: {
-          beginAtZero: true
+          beginAtZero: true,
+          ticks: {
+            color: 'black',
+          }
+        },
+        x: {
+          ticks: {
+            color: 'black',
+          }
         }
       }
     }
