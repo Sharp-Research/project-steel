@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Project Steel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+
+<body>
+      <header>
+        <h1>Project Steel</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="graph.html">Performance Chart</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <div class="Body-content">
+        <form id="myForm" action="">
+        <fieldset>
+          <legend>Input your info!</legend>
+
+          <label for="userName">Name:</label>
+          <input id="userName" type="text" name="userName">
+
+          <label for="userWeight">Weight:</label>
+          <input id="userWeight" type="number" name="userWeight">
+
+          <label for="time">Time:</label>
+          <input id="time" type="number" name="time">
+
+          <label for="activities">Choose a workout:</label>
+          <select name="activities" id="workouts">
+
+            <option value="Push Up">Push Up</option>
+            <option value="Sit-Up">Sit Up</option>
+            <option value="Jumping Jack">Jumping Jacks</option>
+            <option value="Squat">Squat</option>
+            <option value="Burpee">Burpee</option>
+            <option value="Running">Running</option>
+          </select>
+        </fieldset>
+        <button id="button" type="submit">Enter Exercises</button>
+        <div id="show-result-btn">View Performance Chart</div>
+      </form></div>
+      <section>
+        <div id="chart-container" hidden>
+          <canvas id="my-chart" style="position: relative; height:60vh; width:70vw"></canvas>
+        </div>
+      </section>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+  </main>
+  <footer>
+    <p>Project Steel@Project Steel</p>
+  </footer>
+</body>
+
+</html>
