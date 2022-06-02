@@ -30,24 +30,24 @@ function renderChart() {
         label: '# of Calories',
         data: userCalories,
         backgroundColor: [
-          '#ff7300',
-          '#fffb00',
-          '#48ff00',
-          '#00ffd5',
-          '#002bff',
-          '#7a00ff',
-          '#ff00c8',
-          '#ff0000'
+          '#006466',
+          '#065A60',
+          '#0b525b',
+          '#144552',
+          '#1b3a4b',
+          '#212f45',
+          '#272640',
+          '#312244'
         ],
         borderColor: [
-          '#ff7300',
-          '#fffb00',
-          '#48ff00',
-          '#00ffd5',
-          '#002bff',
-          '#7a00ff',
-          '#ff00c8',
-          '#ff0000'
+          '#dee2e6',
+          '#dee2e6',
+          '#dee2e6',
+          '#dee2e6',
+          '#dee2e6',
+          '#dee2e6',
+          '#dee2e6',
+          '#dee2e6'
         ],
         borderWidth: 1
       }
